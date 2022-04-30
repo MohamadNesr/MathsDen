@@ -3,14 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string levelToLoad;
+    public string gameScene;
+    public string libraryScene;
 
     public void StartGame() {
-        SceneManager.LoadScene(levelToLoad);
+        SceneManager.LoadScene(gameScene);
     }
 
     public void LibraryButton() {
-        SceneManager.LoadScene(levelToLoad);
+        SceneManager.LoadScene(libraryScene);
     }
 
     public void SettingsButton() {
