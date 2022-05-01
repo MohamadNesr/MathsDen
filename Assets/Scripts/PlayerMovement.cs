@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    private PickUp pickUp;
 
 
     // Start is called before the first frame update
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Physics2D.gravity = Vector2.zero;
         rb = GetComponent<Rigidbody2D>(); //rb equals the rigidbody on the player
+        pickUp = gameObject.GetComponent<PickUp>();
+        pickUp.Direction = new Vector2(0,0);
     }
 
     // Update is called once per frame
@@ -22,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         float verticalMovement = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector3(horizontalMovement, verticalMovement, 0) * speed;
+        
+        // for apples pick up from any direction
+        if (rb.velocity.sqrMagnitude > .05f){
+            pickUp.Direction = rb.velocity.normalized;
+        }
 
         Flip(rb.velocity.x);
 
