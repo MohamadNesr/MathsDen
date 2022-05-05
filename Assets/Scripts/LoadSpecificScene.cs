@@ -6,6 +6,8 @@ public class LoadSpecificScene : MonoBehaviour
 {
     public string sceneName;
     public Animator fadeSystem;
+    public GameObject gameButton;
+    public GameObject libraryButton;
 
     private void Awake() {
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
@@ -18,6 +20,13 @@ public class LoadSpecificScene : MonoBehaviour
     public IEnumerator loadNextScene() {
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
+        if(sceneName == "LibraryScene") {
+            gameButton.SetActive(true);
+            libraryButton.SetActive(false);
+        } else if (sceneName == "GameScene") {
+            gameButton.SetActive(false);
+            libraryButton.SetActive(true);
+        }
         SceneManager.LoadScene(sceneName);
     }
 }
