@@ -6,6 +6,7 @@ public class PickUp : MonoBehaviour
 {
     public Transform holdSpot;
     public LayerMask pickUpMask;
+    public LayerMask pickUpMask2;
     public Vector3 Direction { get; set;}
     private GameObject itemHolding;
 

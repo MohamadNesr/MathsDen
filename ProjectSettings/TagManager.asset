@@ -6,6 +6,10 @@ TagManager:
   tags:
   - FadeSystem
   - Spawnable
+  - AppleGame
+  - key81
+  - key18
+  - key80
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - UI
   - background
   - PickUp
-  - 
+  - Key
   - 
   - 
   - 
