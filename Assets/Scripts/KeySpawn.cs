@@ -14,7 +14,6 @@ public class KeySpawn : MonoBehaviour
     }
 
     public void spawnObjects(){
-        int randomItem = 0;
         GameObject toSpawn;
         MeshCollider c = quad.GetComponent<MeshCollider>();
         float screenX, screenY;

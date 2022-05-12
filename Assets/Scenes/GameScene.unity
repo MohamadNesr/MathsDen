@@ -6511,8 +6511,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sachant que la salle est un carre et un cote mesure 9 unite de temps. Quel
-    est l'air de la salle? Choisissez le bon interupteur!
+  m_Text: Sachant que la salle est un carre et un cote mesure 9 unite d'air. Choisissez
+    la cle portant l'air de la salle afin de debloquer le coffre!
 --- !u!222 &1638907454
 CanvasRenderer:
   m_ObjectHideFlags: 0
