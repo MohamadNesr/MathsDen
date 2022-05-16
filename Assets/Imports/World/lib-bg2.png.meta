@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -5332,10 +5332,10 @@ TextureImporter:
       lib-bg2_263: -1666915010
       lib-bg2_40: -843754399
       lib-bg2_5: -1820310599
-      lib-bg2_50: 2029483280
       lib-bg2_133: -1032665753
-      lib-bg2_252: -569950377
       lib-bg2_241: -2089005387
+      lib-bg2_252: -569950377
+      lib-bg2_50: 2029483280
       lib-bg2_74: 345124875
       lib-bg2_84: -1088782854
       lib-bg2_87: -613902698

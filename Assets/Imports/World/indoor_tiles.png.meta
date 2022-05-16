@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -4488,8 +4488,8 @@ TextureImporter:
       indoor_tiles_117: -1185917068
       indoor_tiles_21: -1224867837
       indoor_tiles_19: -417388065
-      indoor_tiles_116: 129252022
       indoor_tiles_189: 1124854369
+      indoor_tiles_116: 129252022
       indoor_tiles_206: -124480818
       indoor_tiles_125: 1011046522
       indoor_tiles_93: -1990976787
@@ -4507,13 +4507,13 @@ TextureImporter:
       indoor_tiles_72: -507283349
       indoor_tiles_175: 661325508
       indoor_tiles_36: 854348597
-      indoor_tiles_49: 781043002
       indoor_tiles_143: -1874395880
-      indoor_tiles_56: -445670909
+      indoor_tiles_49: 781043002
       indoor_tiles_151: 484023971
       indoor_tiles_41: -232591095
       indoor_tiles_80: 1950953344
       indoor_tiles_11: 796344534
+      indoor_tiles_56: -445670909
       indoor_tiles_26: 1103352586
       indoor_tiles_111: 1572613550
       indoor_tiles_171: 860391582
@@ -4598,10 +4598,10 @@ TextureImporter:
       indoor_tiles_118: -980642458
       indoor_tiles_87: 976157506
       indoor_tiles_10: -454313839
-      indoor_tiles_58: 183292407
       indoor_tiles_69: -1250109131
-      indoor_tiles_88: 368858076
+      indoor_tiles_58: 183292407
       indoor_tiles_149: 639664342
+      indoor_tiles_88: 368858076
       indoor_tiles_196: -1044153745
       indoor_tiles_148: 549755078
       indoor_tiles_85: -1250959514
@@ -4625,13 +4625,13 @@ TextureImporter:
       indoor_tiles_185: -2039141686
       indoor_tiles_107: 2147386794
       indoor_tiles_14: 1891822155
-      indoor_tiles_30: 1766040051
       indoor_tiles_70: 1277119649
-      indoor_tiles_90: 261905940
+      indoor_tiles_30: 1766040051
       indoor_tiles_168: -364630870
-      indoor_tiles_141: 893386074
+      indoor_tiles_90: 261905940
       indoor_tiles_86: -1648255296
       indoor_tiles_110: 1397259838
+      indoor_tiles_141: 893386074
       indoor_tiles_64: -1681831643
       indoor_tiles_97: 1804157525
       indoor_tiles_138: -1446133915
