@@ -7,6 +7,7 @@ public class RandomAppleSpawn : MonoBehaviour
     public int applesToSpawn;
     public List<GameObject> spawnPool;
     public GameObject quad;
+    
     // Start is called before the first frame update
     void Start()
     {

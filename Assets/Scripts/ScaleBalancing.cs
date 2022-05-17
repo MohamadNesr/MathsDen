@@ -15,7 +15,7 @@ public class ScaleBalancing : MonoBehaviour
     public Animator animator;
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Spawnable"){
+        if ((other.gameObject.tag == "Spawnable")&& (other.GetType() == typeof(BoxCollider2D))){
             nb_objects++;
         }
         /* Debug.Log(nb_objects);
@@ -23,7 +23,7 @@ public class ScaleBalancing : MonoBehaviour
         Debug.Log(weight);*/
     }  
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject.tag == "Spawnable"){
+        if ((other.gameObject.tag == "Spawnable")&& (other.GetType() == typeof(BoxCollider2D))){
             nb_objects--;
         }
        /* Debug.Log(nb_objects);
@@ -35,7 +35,6 @@ public class ScaleBalancing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         totalWeight = nb_objects*objectWeight;
         animator.SetFloat("objWeight", totalWeight);
         animator.SetFloat("weight", weight);
