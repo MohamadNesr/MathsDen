@@ -6743,6 +6743,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &920281290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 920281292}
+  - component: {fileID: 920281291}
+  m_Layer: 0
+  m_Name: Game1Trigger
+  m_TagString: Game1Trigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &920281291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920281290}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: ab4e8a66360f66e4b8ddb7a313aa1c1c, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.088049, y: -8.853679}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0372982, y: 0.41657448}
+  m_EdgeRadius: 0
+--- !u!4 &920281292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920281290}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5586357, y: 4.8050284, z: 0.039475143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932185289
 GameObject:
   m_ObjectHideFlags: 0
@@ -6754,7 +6812,7 @@ GameObject:
   - component: {fileID: 932185291}
   - component: {fileID: 932185290}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: SpawnerApples
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6776,6 +6834,8 @@ MonoBehaviour:
   spawnPool:
   - {fileID: 1358978175}
   quad: {fileID: 527672572}
+  gameOn: 0
+  game1Active: 0
 --- !u!4 &932185291
 Transform:
   m_ObjectHideFlags: 0
@@ -7925,6 +7985,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472022471}
   m_CullTransparentMesh: 1
+--- !u!1 &1492937166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492937168}
+  - component: {fileID: 1492937167}
+  m_Layer: 0
+  m_Name: Game3Trigger
+  m_TagString: Game3Trigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1492937167
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492937166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: ab4e8a66360f66e4b8ddb7a313aa1c1c, type: 2}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.623085, y: 1.7011545}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4845791, y: 0.9999995}
+  m_EdgeRadius: 0
+--- !u!4 &1492937168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492937166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5586357, y: 4.8050284, z: 0.039475143}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1555016611
 GameObject:
   m_ObjectHideFlags: 0
@@ -12756,6 +12874,8 @@ MonoBehaviour:
   speed: 5
   animator: {fileID: 1700810917}
   spriteRenderer: {fileID: 1700810912}
+  game3Trigger: 0
+  game1Trigger: 0
   isReading: 0
 --- !u!50 &1700810919
 Rigidbody2D:
@@ -13063,7 +13183,7 @@ GameObject:
   - component: {fileID: 1848957681}
   - component: {fileID: 1848957682}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: SpawnerKeys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13102,6 +13222,8 @@ MonoBehaviour:
   - {fileID: 1618672187}
   - {fileID: 579105294}
   quad: {fileID: 1237655049}
+  gameOn: 0
+  game3Active: 0
 --- !u!1 &1962233133
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     private PickUp pickUp;
-
+    public bool game3Trigger;
+    public bool game1Trigger;
     public bool isReading;
 
 
@@ -20,6 +21,15 @@ public class PlayerMovement : MonoBehaviour
         pickUp = gameObject.GetComponent<PickUp>();
         pickUp.Direction = new Vector2(0,0);
         isReading = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if ((other.gameObject.tag == "Game3Trigger")){
+            game3Trigger = true;
+        }
+        if ((other.gameObject.tag == "Game1Trigger")){
+            game1Trigger = true;
+        }
     }
 
     // Update is called once per frame
