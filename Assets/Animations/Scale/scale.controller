@@ -67,9 +67,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.5
+  - m_ConditionMode: 3
+    m_ConditionEvent: scaleBalance
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6049031188182940729}
   m_Solo: 0
@@ -93,11 +93,11 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.5
+    m_ConditionEvent: scaleBalance
+    m_EventTreshold: -1
   - m_ConditionMode: 4
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.7
+    m_ConditionEvent: scaleBalance
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6477085786135601946}
   m_Solo: 0
@@ -149,18 +149,12 @@ AnimatorController:
   m_Name: scale
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: weight
-    m_Type: 1
-    m_DefaultFloat: 12.6
+  - m_Name: scaleBalance
+    m_Type: 3
+    m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: objWeight
-    m_Type: 1
-    m_DefaultFloat: 12.6
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -182,9 +176,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.5
+  - m_ConditionMode: 3
+    m_ConditionEvent: scaleBalance
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6049031188182940729}
   m_Solo: 0
@@ -261,10 +255,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.7
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6477085786135601946}
   m_Solo: 0
@@ -287,12 +278,12 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.5
   - m_ConditionMode: 4
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.7
+    m_ConditionEvent: scaleBalance
+    m_EventTreshold: 1
+  - m_ConditionMode: 3
+    m_ConditionEvent: scaleBalance
+    m_EventTreshold: -1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -220541730458771412}
   m_Solo: 0
@@ -315,9 +306,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.6
+  - m_ConditionMode: 4
+    m_ConditionEvent: scaleBalance
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6026887442661687472}
   m_Solo: 0
@@ -340,9 +331,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: objWeight
-    m_EventTreshold: 12.7
+  - m_ConditionMode: 4
+    m_ConditionEvent: scaleBalance
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6026887442661687472}
   m_Solo: 0

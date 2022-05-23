@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class RoomArea : MonoBehaviour
+public class TriangleArea : MonoBehaviour
 {
-    private float[] area = {64.0f, 81.0f, 100.0f};
+    private float[] area = {18.0f , 25.0f};
     private float aire;
     public Animator animator;
     private bool victory = false;
@@ -13,30 +13,26 @@ public class RoomArea : MonoBehaviour
     public bool gameOn;
     int randomInt; 
 
+    public GameObject toDesactivate;
     Random rnd = new Random();
 
 
     // Start is called before the first frame update
     private void Start() {
-
         randomInt = rnd.Next(0, area.Length);
         aire = area[randomInt];
+        toDesactivate.SetActive(false);
+        game3Active = true;    
         Debug.Log("randomInt = " + randomInt );
         Debug.Log("aire = " + aire.ToString() );
-
-        game3Active = true;    
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.layer == 7){
-            if(other.gameObject.tag == "key81" && randomInt == 1){
+            if(other.gameObject.tag == "key18"  && randomInt == 0){
                 victory = true;
                /* Debug.Log("Bonne valeure");
                 Debug.Log(victory);*/
-            }else if(other.gameObject.tag == "key64" && randomInt == 0){
-                victory = true;
-               /* Debug.Log("Bonne valeure");
-                Debug.Log(victory);*/
-            }else if(other.gameObject.tag == "key100" && randomInt == 2){
+            }else if(other.gameObject.tag == "key25"  && randomInt == 1){
                 victory = true;
                /* Debug.Log("Bonne valeure");
                 Debug.Log(victory);*/
@@ -49,9 +45,7 @@ public class RoomArea : MonoBehaviour
         }
     }
     private void OnTriggerExit2D(Collider2D other) {
-        if ((other.gameObject.tag == "key81" &&  randomInt == 1) ||
-        (other.gameObject.tag == "key64" &&  randomInt == 0 )||
-        (other.gameObject.tag == "key100" &&  randomInt == 2)){
+        if ((other.gameObject.tag == "key18" && randomInt == 0)||(other.gameObject.tag == "key25" && randomInt == 1)){
             victory = false;
             animator.SetBool("Area",victory);
             /*Debug.Log("ExitValeur");
@@ -66,12 +60,13 @@ public class RoomArea : MonoBehaviour
          if(Input.GetKeyDown(KeyCode.T)&& gameOn && game3Active ){
              if(victory == true){
                 animator.SetBool("Area",victory);
-                Debug.Log("Partie 3 gagnee!");
+                Debug.Log("Partie 3 hard gagnee!");
+                Debug.Log(victory);
                /* Debug.Log(victory);*/
                 game3Active = false;
             }  else{
                 animator.SetBool("Area",victory);
-                Debug.Log("Partie 3 perdue reessayez!");
+                Debug.Log("Partie 3 hard perdue reessayez!");
                 //Debug.Log(victory);
             } 
          }

@@ -12,6 +12,9 @@ TagManager:
   - key80
   - Game3Trigger
   - Game1Trigger
+  - key64
+  - key100
+  - key25
   layers:
   - Default
   - TransparentFX
