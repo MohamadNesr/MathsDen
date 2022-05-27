@@ -11,7 +11,14 @@ public class RoomArea : MonoBehaviour
     private bool victory = false;
     public bool game3Active;
     public bool gameOn;
-    int randomInt; 
+    public int randomInt; 
+    public GameObject toDisactivate;
+    public GameObject toDisactivate1;
+    public GameObject toDisactivate2;
+    public GameObject toDisactivate3;
+    public GameObject toDisactivate4;
+    public GameObject toDisactivate5;
+
 
     Random rnd = new Random();
 
@@ -23,7 +30,14 @@ public class RoomArea : MonoBehaviour
         aire = area[randomInt];
         Debug.Log("randomInt = " + randomInt );
         Debug.Log("aire = " + aire.ToString() );
-
+        //-----------------WILL BE DELETED WHEN USER PROFILE IS SET------------------
+        toDisactivate.SetActive(false);
+        toDisactivate4.SetActive(false);
+        toDisactivate5.SetActive(false);
+        //----------------------------------------------------------------------------
+        toDisactivate1.SetActive(false);
+        toDisactivate2.SetActive(false);
+        toDisactivate3.SetActive(false);
         game3Active = true;    
     }
     private void OnTriggerEnter2D(Collider2D other) {
@@ -63,17 +77,31 @@ public class RoomArea : MonoBehaviour
     void Update()
     {
         gameOn = GameObject.Find("Player").GetComponent<PlayerMovement>().game3Trigger;
-         if(Input.GetKeyDown(KeyCode.T)&& gameOn && game3Active ){
-             if(victory == true){
-                animator.SetBool("Area",victory);
-                Debug.Log("Partie 3 gagnee!");
-               /* Debug.Log(victory);*/
-                game3Active = false;
-            }  else{
-                animator.SetBool("Area",victory);
-                Debug.Log("Partie 3 perdue reessayez!");
-                //Debug.Log(victory);
-            } 
+          if(gameOn && game3Active){
+            if(randomInt == 0){
+                    toDisactivate1.SetActive(true);
+                    toDisactivate2.SetActive(false);
+                    toDisactivate3.SetActive(false);
+                
+            } else if(randomInt == 1){
+                    toDisactivate1.SetActive(false);
+                    toDisactivate2.SetActive(true);
+                    toDisactivate3.SetActive(false);
+            } else if(randomInt ==2){
+                    toDisactivate1.SetActive(false);
+                    toDisactivate2.SetActive(false);
+                    toDisactivate3.SetActive(true);
+            }
+            if(Input.GetKeyDown(KeyCode.T)){
+                if(victory == true){
+                    animator.SetBool("Area",victory);
+                    Debug.Log("Partie 3 gagnee!");
+                    game3Active = false;
+                }  else{
+                    animator.SetBool("Area",victory);
+                    Debug.Log("Partie 3 perdue reessayez!");
+                } 
+            }
          }
     }
 }

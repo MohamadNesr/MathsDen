@@ -23,17 +23,21 @@ public class ScaleBalancing : MonoBehaviour
     private float totalWeight = 0.0f;
     public Animator animator;
     Random rnd = new Random();
-    int randomInt; 
+    public int randomInt; 
     public bool game1Active;
     public bool gameOn;
     private int scaleBalance = 1;
+    public GameObject toDisactivate1;
+    public GameObject toDisactivate2;
 
     private void Start() {
         game1Active = true;
         randomInt = rnd.Next(0, weight.Length);
         w = weight[randomInt];
         ow = objectWeight[randomInt];
-        baguetteWeight = w/4;
+        baguetteWeight = w/5;
+        toDisactivate1.SetActive(false);
+        toDisactivate2.SetActive(false);
         Debug.Log("Poids objet:" + ow);
         Debug.Log("Poids total: " + w);
     
@@ -69,13 +73,26 @@ public class ScaleBalancing : MonoBehaviour
         }else{
             scaleBalance = 1;
         }
-        if(Input.GetKeyDown(KeyCode.T)&& gameOn && game1Active){
-            if(totalWeight.ToString() == w.ToString() ){
-                Debug.Log("Partie 1 gagnee!");
-                game1Active = false;
-            }  else{
-                Debug.Log("Partie 1 perdue reessayez!");
-            } 
+        if(gameOn && game1Active){
+            if(randomInt == 0){
+                    toDisactivate1.SetActive(true);
+                    toDisactivate2.SetActive(false);
+                
+            } else if(randomInt == 1){
+                    toDisactivate1.SetActive(false);
+                    toDisactivate2.SetActive(true);
+            }
+            if(Input.GetKeyDown(KeyCode.T)){
+                if(totalWeight.ToString() == w.ToString() ){
+                    toDisactivate1.SetActive(false);
+                    toDisactivate2.SetActive(false);
+                    Debug.Log("Partie 1 gagnee!");
+                    game1Active = false;
+                }  else{
+                    Debug.Log("Partie 1 perdue reessayez!");
+                } 
+            }
         }
+        
     }
 }
