@@ -29,9 +29,23 @@ public class ScaleBalancing : MonoBehaviour
     private int scaleBalance = 1;
     public GameObject toDisactivate1;
     public GameObject toDisactivate2;
+    public GameObject victoryDoorToDestroy;
+    
+    // PlayerProfile reference
+    private PlayerProfile playerProfile;
+    private float timeToCheck;
+
+    // Next game difficulties
+    public GameObject nextGameEasy;
+    public GameObject nextGameHard;
+
+    private void Awake() {
+        playerProfile = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerProfile>();
+    }
 
     private void Start() {
         game1Active = true;
+        timeToCheck = Time.time;
         randomInt = rnd.Next(0, weight.Length);
         w = weight[randomInt];
         ow = objectWeight[randomInt];
@@ -63,6 +77,8 @@ public class ScaleBalancing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Update time passed since begining of exercice in seconds
+        playerProfile.timePassed[0] = Time.time - timeToCheck;
         gameOn = GameObject.Find("Player").GetComponent<PlayerMovement>().game1Trigger;
         totalWeight = nb_objects*ow;
         animator.SetInteger("scaleBalance", scaleBalance);
@@ -83,12 +99,30 @@ public class ScaleBalancing : MonoBehaviour
                     toDisactivate2.SetActive(true);
             }
             if(Input.GetKeyDown(KeyCode.T)){
+                // Increment nb essay for this exercice
+                playerProfile.nbTotalEssay[0] = playerProfile.nbTotalEssay[0] + 1f;
                 if(totalWeight.ToString() == w.ToString() ){
                     toDisactivate1.SetActive(false);
                     toDisactivate2.SetActive(false);
                     Debug.Log("Partie 1 gagnee!");
+                    playerProfile.nbExercicesDone = playerProfile.nbExercicesDone + 1;
+                    // Next difficulty computing
+                    if (playerProfile.nbTotalEssay[0] < 3 && playerProfile.timePassed[0] < 120f) {
+                        playerProfile.nextDifficulty = PlayerProfile.Difficulty.Hard;
+                        nextGameEasy.SetActive(false);
+                        nextGameHard.SetActive(true);
+                    } else {
+                        playerProfile.nextDifficulty = PlayerProfile.Difficulty.Easy;
+                        nextGameEasy.SetActive(true);
+                        nextGameHard.SetActive(false);
+                    }
+                    
+                    // Open new path
+                    Destroy(victoryDoorToDestroy);
                     game1Active = false;
                 }  else{
+                    // Increment nb errors for this exercice
+                    playerProfile.nbErrors[0] = playerProfile.nbErrors[0] + 1f;
                     Debug.Log("Partie 1 perdue reessayez!");
                 } 
             }

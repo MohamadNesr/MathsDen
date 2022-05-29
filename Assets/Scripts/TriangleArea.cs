@@ -27,7 +27,7 @@ public class TriangleArea : MonoBehaviour
     private void Start() {
         randomInt = rnd.Next(0, area.Length);
         aire = area[randomInt];
-        //toDisactivate.SetActive(false);
+        toDisactivate.SetActive(false);
         toDisactivate1.SetActive(false);
         toDisactivate2.SetActive(false);
         toDisactivate3.SetActive(false);

@@ -24,11 +24,11 @@ public class LoadSpecificScene : MonoBehaviour
     public IEnumerator teleportThere() {
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
-        if(isGame) {
+        if(isGame == true) {
             gameButton.SetActive(true);
             libraryButton.SetActive(false);
             isGame = false;
-        } else if (!isGame) {
+        } else {
             gameButton.SetActive(false);
             libraryButton.SetActive(true);
             isGame = true;

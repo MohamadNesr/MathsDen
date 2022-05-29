@@ -4,9 +4,15 @@ public class HandlePage : MonoBehaviour
 {
     public GameObject[] pages;
     public GameObject buttonNext;
+    private PlayerProfile playerProfile;
     public int nbPages;
     private int currentPageIndex;
     private int nextPageIndex;
+    public int nbLesson;
+
+    void Awake() {
+        playerProfile = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerProfile>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +32,9 @@ public class HandlePage : MonoBehaviour
             nextPageIndex++;
         } else {
             buttonNext.SetActive(false);
+            if (nbLesson != 3) { // Safety mesure since we don't have a lesson 4 at the moment
+                playerProfile.hasReadLesson[nbLesson] = true;
+            }
         }
     }
 
