@@ -97,6 +97,9 @@ public class RoomArea : MonoBehaviour
                     animator.SetBool("Area",victory);
                     Debug.Log("Partie 3 gagnee!");
                     game3Active = false;
+                    toDisactivate1.SetActive(false);
+                    toDisactivate2.SetActive(false);
+                    toDisactivate3.SetActive(false);
                 }  else{
                     animator.SetBool("Area",victory);
                     Debug.Log("Partie 3 perdue reessayez!");

@@ -84,6 +84,8 @@ public class TriangleArea : MonoBehaviour
                     Debug.Log(victory);
                 /* Debug.Log(victory);*/
                     game3Active = false;
+                    toDisactivate1.SetActive(false);
+                    toDisactivate2.SetActive(false);
                 }  else{
                     animator.SetBool("Area",victory);
                     Debug.Log("Partie 3 hard perdue reessayez!");
