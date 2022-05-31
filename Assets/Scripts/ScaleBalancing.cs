@@ -35,6 +35,11 @@ public class ScaleBalancing : MonoBehaviour
     private PlayerProfile playerProfile;
     private float timeToCheck;
 
+    // PlayerSpawn reference
+    public GameObject playerSpawn;
+    // New PlayerSpawn reference
+    public GameObject newPlayerSpawn;
+
     // Next game difficulties
     public GameObject nextGameEasy;
     public GameObject nextGameHard;
@@ -44,6 +49,7 @@ public class ScaleBalancing : MonoBehaviour
     }
 
     private void Start() {
+        playerSpawn.transform.position = newPlayerSpawn.transform.position;
         game1Active = true;
         timeToCheck = Time.time;
         randomInt = rnd.Next(0, weight.Length);
@@ -77,8 +83,6 @@ public class ScaleBalancing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Update time passed since begining of exercice in seconds
-        playerProfile.timePassed[0] = Time.time - timeToCheck;
         gameOn = GameObject.Find("Player").GetComponent<PlayerMovement>().game1Trigger;
         totalWeight = nb_objects*ow;
         animator.SetInteger("scaleBalance", scaleBalance);
@@ -90,6 +94,8 @@ public class ScaleBalancing : MonoBehaviour
             scaleBalance = 1;
         }
         if(gameOn && game1Active){
+            // Update time passed since begining of exercice in seconds
+            playerProfile.timePassed[0] = Time.time - timeToCheck;
             if(randomInt == 0){
                     toDisactivate1.SetActive(true);
                     toDisactivate2.SetActive(false);

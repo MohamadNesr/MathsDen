@@ -2,37 +2,32 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class LoadSpecificScene : MonoBehaviour
+public class LoadLibrary : MonoBehaviour
 {
     public GameObject teleportationLocation;
     public Animator fadeSystem;
     public GameObject gameButton;
     public GameObject libraryButton;
+    public GameObject profileButton;
+    public GameObject playerProfile;
     private GameObject player;
-    private bool isGame;
 
     private void Awake() {
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        isGame = true;
     }
 
-    public void loadScene() {
+    public void loadLibrary() {
         StartCoroutine(teleportThere());
     }
 
     public IEnumerator teleportThere() {
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
-        if(isGame == true) {
-            gameButton.SetActive(true);
-            libraryButton.SetActive(false);
-            isGame = false;
-        } else {
-            gameButton.SetActive(false);
-            libraryButton.SetActive(true);
-            isGame = true;
-        }
+        gameButton.SetActive(true);
+        profileButton.SetActive(true);
+        libraryButton.SetActive(false);
+        playerProfile.SetActive(false);
         player.transform.position = teleportationLocation.transform.position;
     }
 }
