@@ -29,6 +29,8 @@ public class ScaleBalancing : MonoBehaviour
     private int scaleBalance = 1;
     public GameObject toDisactivate1;
     public GameObject toDisactivate2;
+    public GameObject victoryMessage;
+    public GameObject failureMessage;
     public GameObject victoryDoorToDestroy;
     
     // PlayerProfile reference
@@ -58,6 +60,7 @@ public class ScaleBalancing : MonoBehaviour
         baguetteWeight = w/5;
         toDisactivate1.SetActive(false);
         toDisactivate2.SetActive(false);
+        victoryMessage.SetActive(false);
         Debug.Log("Poids objet:" + ow);
         Debug.Log("Poids total: " + w);
     
@@ -79,6 +82,18 @@ public class ScaleBalancing : MonoBehaviour
         Debug.Log(weight);*/
     }    
     
+    IEnumerator CoroutineVictory(){
+        victoryMessage.SetActive(true);
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(3.0f);
+        victoryMessage.SetActive(false);
+    }
+    IEnumerator CoroutineFailure(){
+        failureMessage.SetActive(true);
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(3.0f);
+        failureMessage.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -110,7 +125,9 @@ public class ScaleBalancing : MonoBehaviour
                 if(totalWeight.ToString() == w.ToString() ){
                     toDisactivate1.SetActive(false);
                     toDisactivate2.SetActive(false);
+                    
                     Debug.Log("Partie 1 gagnee!");
+                    
                     playerProfile.nbExercicesDone = playerProfile.nbExercicesDone + 1;
                     // Next difficulty computing
                     if (playerProfile.nbTotalEssay[0] < 3 && playerProfile.timePassed[0] < 120f) {
@@ -125,10 +142,12 @@ public class ScaleBalancing : MonoBehaviour
                     
                     // Open new path
                     Destroy(victoryDoorToDestroy);
+                    StartCoroutine( CoroutineVictory() );
                     game1Active = false;
                 }  else{
                     // Increment nb errors for this exercice
                     playerProfile.nbErrors[0] = playerProfile.nbErrors[0] + 1f;
+                    StartCoroutine( CoroutineFailure() );
                     Debug.Log("Partie 1 perdue reessayez!");
                 } 
             }

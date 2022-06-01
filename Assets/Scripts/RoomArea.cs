@@ -18,6 +18,8 @@ public class RoomArea : MonoBehaviour
     public GameObject toDisactivate3;
     public GameObject toDisactivate4;
     public GameObject toDisactivate5;
+    public GameObject victoryMessage;
+    public GameObject failureMessage;
 
     // PlayerProfile reference
     private PlayerProfile playerProfile;
@@ -84,6 +86,19 @@ public class RoomArea : MonoBehaviour
             Debug.Log(victory);*/
         }
     }    
+     
+    IEnumerator CoroutineVictory(){
+        victoryMessage.SetActive(true);
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(3.0f);
+        victoryMessage.SetActive(false);
+    }
+    IEnumerator CoroutineFailure(){
+        failureMessage.SetActive(true);
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(3.0f);
+        failureMessage.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -122,10 +137,13 @@ public class RoomArea : MonoBehaviour
                     toDisactivate1.SetActive(false);
                     toDisactivate2.SetActive(false);
                     toDisactivate3.SetActive(false);
+                    StartCoroutine( CoroutineVictory() );
+
                 }  else{
                     // Increment nb errors for this exercice
                     playerProfile.nbErrors[1] = playerProfile.nbErrors[1] + 1f;
                     animator.SetBool("Area",victory);
+                    StartCoroutine( CoroutineFailure() );
                     Debug.Log("Partie 3 perdue reessayez!");
                 } 
             }
