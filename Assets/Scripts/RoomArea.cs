@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
@@ -30,6 +31,12 @@ public class RoomArea : MonoBehaviour
     // New PlayerSpawn reference
     public GameObject newPlayerSpawn;
 
+    // tips text reference
+    public GameObject tipsPanel;
+    public Text tipsText;
+    private bool firstTipDisplayed;
+    private bool secondTipDisplayed;
+
     Random rnd = new Random();
 
     private void Awake() {
@@ -39,6 +46,8 @@ public class RoomArea : MonoBehaviour
     // Start is called before the first frame update
     private void Start() {
         playerSpawn.transform.position = newPlayerSpawn.transform.position;
+        firstTipDisplayed = false;
+        secondTipDisplayed = false;
         timeToCheck = Time.time;
         randomInt = rnd.Next(0, area.Length);
         aire = area[randomInt];
@@ -106,6 +115,15 @@ public class RoomArea : MonoBehaviour
         gameOn = GameObject.Find("Player").GetComponent<PlayerMovement>().game3Trigger;
           if(gameOn && game3Active){
             playerProfile.timePassed[1] = Time.time - timeToCheck;
+            if ((playerProfile.timePassed[1] >= 60 || playerProfile.nbErrors[1] > 0) && !firstTipDisplayed) { // A little tip maybe ?
+                firstTipDisplayed = true;
+                tipsText.text = "Tu te souviens de la formule de l'aire d'un carré ? Ici, il faut multiplier la longueur d'un côté du carré par lui même !";
+                StartCoroutine(displayTips());
+            } else if ((playerProfile.timePassed[1] > 120 || playerProfile.nbErrors[1] > 2) && !secondTipDisplayed) { // Should go back to the lesson ...
+                secondTipDisplayed = true;
+                tipsText.text = "Trop difficile pour l'instant ? Je te conseille d'aller revoir le cours n°2 pour revoir ce que tu n'as pas compris :)";
+                StartCoroutine(displayTips());
+            }
             if(randomInt == 0){
                     toDisactivate1.SetActive(true);
                     toDisactivate2.SetActive(false);
@@ -148,5 +166,11 @@ public class RoomArea : MonoBehaviour
                 } 
             }
          }
+    }
+
+    public IEnumerator displayTips() {
+        tipsPanel.SetActive(true);
+        yield return new WaitForSeconds(10);
+        tipsPanel.SetActive(false);
     }
 }

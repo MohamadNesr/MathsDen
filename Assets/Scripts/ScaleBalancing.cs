@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
@@ -42,6 +43,12 @@ public class ScaleBalancing : MonoBehaviour
     // New PlayerSpawn reference
     public GameObject newPlayerSpawn;
 
+    // tips text reference
+    public GameObject tipsPanel;
+    public Text tipsText;
+    private bool firstTipDisplayed;
+    private bool secondTipDisplayed;
+
     // Next game difficulties
     public GameObject nextGameEasy;
     public GameObject nextGameHard;
@@ -53,6 +60,8 @@ public class ScaleBalancing : MonoBehaviour
     private void Start() {
         playerSpawn.transform.position = newPlayerSpawn.transform.position;
         game1Active = true;
+        firstTipDisplayed = false;
+        secondTipDisplayed = false;
         timeToCheck = Time.time;
         randomInt = rnd.Next(0, weight.Length);
         w = weight[randomInt];
@@ -111,13 +120,22 @@ public class ScaleBalancing : MonoBehaviour
         if(gameOn && game1Active){
             // Update time passed since begining of exercice in seconds
             playerProfile.timePassed[0] = Time.time - timeToCheck;
+            if ((playerProfile.timePassed[0] >= 60 || playerProfile.nbErrors[0] > 0) && !firstTipDisplayed) { // A little tip maybe ?
+                firstTipDisplayed = true;
+                tipsText.text = "Tu te souviens du tableau de proportionnalité ? Ici, il faut en faire un pour le pain et un pour les pommes, puis regarder quelle quantité correspond au même poids !";
+                StartCoroutine(displayTips());
+            } else if ((playerProfile.timePassed[0] > 120 || playerProfile.nbErrors[0] > 2) && !secondTipDisplayed) { // Should go back to the lesson ...
+                secondTipDisplayed = true;
+                tipsText.text = "Trop difficile pour l'instant ? Je te conseille d'aller revoir le cours n°1 pour revoir ce que tu n'as pas compris :)";
+                StartCoroutine(displayTips());
+            }
             if(randomInt == 0){
-                    toDisactivate1.SetActive(true);
-                    toDisactivate2.SetActive(false);
+                toDisactivate1.SetActive(true);
+                toDisactivate2.SetActive(false);
                 
             } else if(randomInt == 1){
-                    toDisactivate1.SetActive(false);
-                    toDisactivate2.SetActive(true);
+                toDisactivate1.SetActive(false);
+                toDisactivate2.SetActive(true);
             }
             if(Input.GetKeyDown(KeyCode.T)){
                 // Increment nb essay for this exercice
@@ -153,5 +171,11 @@ public class ScaleBalancing : MonoBehaviour
             }
         }
         
+    }
+
+    public IEnumerator displayTips() {
+        tipsPanel.SetActive(true);
+        yield return new WaitForSeconds(10);
+        tipsPanel.SetActive(false);
     }
 }
