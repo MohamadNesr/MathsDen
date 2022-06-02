@@ -4891,7 +4891,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Sachant que le mur du haut mesure 10 unite d'aire et notre bibliotheque
     se situe a 5 unite d'aire de ce mur. Quel est l'air donc de ce triangle forme
-    par la base(mur) et le sommet(bibliotheque)
+    par la base(mur) et le sommet(bibliotheque) Appuyez sur T pour valider votre
+    reponse.
 --- !u!222 &217961645
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5790,7 +5791,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Sachant qu\u2019une pomme p\xE8se 150.5g et une baguette 180.6g, placez
     assez de pommes\r\nsur la partie gauche de la balance pour equilibrer nos deux
-    ingredients."
+    ingredients. Appuyez sur T pour valider votre reponse."
 --- !u!222 &413241084
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7154,7 +7155,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Sachant que la salle est un carre et un cote mesure 9 unites d'air. Choisissez
-    la cle portant l'air de la salle afin de debloquer le coffre!
+    la cle portant l'air de la salle afin de debloquer le coffre! Appuyez sur T pour
+    valider votre reponse.
 --- !u!222 &470274089
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9552,8 +9554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.69, y: 147}
-  m_SizeDelta: {x: 350, y: 70}
+  m_AnchoredPosition: {x: -155, y: 136.34}
+  m_SizeDelta: {x: 350, y: 91.316}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &847548634
 MonoBehaviour:
@@ -9895,8 +9897,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.69225, y: 147}
-  m_SizeDelta: {x: 350, y: 70}
+  m_AnchoredPosition: {x: -155, y: 136.34409}
+  m_SizeDelta: {x: 350, y: 91.3118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891008355
 MonoBehaviour:
@@ -10273,7 +10275,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Sachant que la salle est un carre et un cote mesure 10 unites d'air. Choisissez
-    la cle portant l'air de la salle afin de debloquer le coffre!
+    la cle portant l'air de la salle afin de debloquer le coffre! Appuyez sur T pour
+    valider votre reponse.
 --- !u!222 &1023911304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10417,8 +10420,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.69, y: 147}
-  m_SizeDelta: {x: 350, y: 70}
+  m_AnchoredPosition: {x: -155, y: 136.34}
+  m_SizeDelta: {x: 350, y: 91.312}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079577956
 MonoBehaviour:
@@ -10561,8 +10564,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -177, y: 147}
-  m_SizeDelta: {x: 300, y: 70}
+  m_AnchoredPosition: {x: -177, y: 136.34}
+  m_SizeDelta: {x: 300, y: 91.312}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1158666072
 MonoBehaviour:
@@ -11199,8 +11202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.69225, y: 147}
-  m_SizeDelta: {x: 350, y: 70}
+  m_AnchoredPosition: {x: -155, y: 136.34409}
+  m_SizeDelta: {x: 350, y: 91.3118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248988790
 MonoBehaviour:
@@ -11414,8 +11417,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -167.29575, y: 147}
-  m_SizeDelta: {x: 350, y: 70}
+  m_AnchoredPosition: {x: -155, y: 136.34}
+  m_SizeDelta: {x: 350, y: 91.312}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1289059685
 MonoBehaviour:
@@ -12609,7 +12612,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Sachant qu\u2019une pomme p\xE8se 180.25g et une baguette 144.2g, placez
     assez de pommes\r\nsur la partie gauche de la balance pour equilibrer nos deux
-    ingredients."
+    ingredients. Appuyez sur T pour valider votre reponse."
 --- !u!222 &1402703792
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19672,7 +19675,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Sachant que la salle est un carre et un cote mesure 8 unites d'air. Choisissez
-    la cle portant l'air de la salle afin de debloquer le coffre!
+    la cle portant l'air de la salle afin de debloquer le coffre! Appuyez sur T pour
+    valider votre reponse.
 --- !u!222 &1868976831
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19748,8 +19752,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -177, y: 147}
-  m_SizeDelta: {x: 300, y: 70}
+  m_AnchoredPosition: {x: -177, y: 136.34409}
+  m_SizeDelta: {x: 300, y: 91.3118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895403571
 MonoBehaviour:
@@ -20922,7 +20926,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: Sachant que le mur du haut mesure 9 unite d'aire et notre bibliotheque
     se situe a 4 unite d'aire de ce mur. Quel est l'air donc de ce triangle forme
-    par la base(mur) et le sommet(bibliotheque)
+    par la base(mur) et le sommet(bibliotheque) Appuyez sur T pour valider votre
+    reponse.
 --- !u!222 &2104718008
 CanvasRenderer:
   m_ObjectHideFlags: 0
