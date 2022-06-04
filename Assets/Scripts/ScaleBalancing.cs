@@ -49,6 +49,10 @@ public class ScaleBalancing : MonoBehaviour
     private bool firstTipDisplayed;
     private bool secondTipDisplayed;
 
+    // Sounds
+    public AudioClip failureSound;
+    public AudioClip victorySound;
+
     // Next game difficulties
     public GameObject nextGameEasy;
     public GameObject nextGameHard;
@@ -141,6 +145,7 @@ public class ScaleBalancing : MonoBehaviour
                 // Increment nb essay for this exercice
                 playerProfile.nbTotalEssay[0] = playerProfile.nbTotalEssay[0] + 1f;
                 if(totalWeight.ToString() == w.ToString() ){
+                    AudioManager.instance.PlayClipAt(victorySound, transform.position);
                     toDisactivate1.SetActive(false);
                     toDisactivate2.SetActive(false);
                     
@@ -163,6 +168,7 @@ public class ScaleBalancing : MonoBehaviour
                     StartCoroutine( CoroutineVictory() );
                     game1Active = false;
                 }  else{
+                    AudioManager.instance.PlayClipAt(failureSound, transform.position);
                     // Increment nb errors for this exercice
                     playerProfile.nbErrors[0] = playerProfile.nbErrors[0] + 1f;
                     StartCoroutine( CoroutineFailure() );

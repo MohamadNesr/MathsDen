@@ -7,6 +7,7 @@ public class ReadingZone : MonoBehaviour
     public GameObject readingLessonText;
     public GameObject lessonContent;
     public GameObject gameButton;
+    public AudioClip openLessonSound;
 
     private void Awake() {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
@@ -14,6 +15,7 @@ public class ReadingZone : MonoBehaviour
 
     private void Update() {
         if(isInRange && Input.GetKeyDown(KeyCode.E)) {
+            AudioManager.instance.PlayClipAt(openLessonSound, transform.position);
             playerMovement.isReading = true;
             lessonContent.SetActive(true);
             gameButton.SetActive(false);

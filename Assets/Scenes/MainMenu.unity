@@ -397,6 +397,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a2b39aced56be904e843b59806505ee3, type: 3}
   - {fileID: 8300000, guid: ff4b080bc7e9e154ba6d3459567e9a57, type: 3}
   audioSource: {fileID: 291639163}
+  soundEffectMixer: {fileID: -4663469467625938538, guid: 92c542b6cbcd0304ead16616519349e6, type: 2}
 --- !u!82 &291639163
 AudioSource:
   m_ObjectHideFlags: 0
@@ -406,7 +407,7 @@ AudioSource:
   m_GameObject: {fileID: 291639159}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 92c542b6cbcd0304ead16616519349e6, type: 2}
+  OutputAudioMixerGroup: {fileID: -2359860653672922489, guid: 92c542b6cbcd0304ead16616519349e6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2066,8 +2067,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1909056090}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: SetVolumeSound
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2198,6 +2199,7 @@ MonoBehaviour:
   audioManager: {fileID: 291639162}
   gameScene: GameScene
   settingsWindow: {fileID: 1909056086}
+  menuClicSound: {fileID: 8300000, guid: 40ac52a324fa82b46a5e99862dc70017, type: 3}
 --- !u!1 &1764960226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,7 +2293,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1909056090}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetVolumeMusic
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

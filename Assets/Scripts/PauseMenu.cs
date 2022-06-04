@@ -5,6 +5,7 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject settingsWindow;
+    public AudioClip menuClicSound;
 
     // Update is called once per frame
     void Update()
@@ -19,12 +20,14 @@ public class PauseMenu : MonoBehaviour
     }
 
     void Paused() {
+        AudioManager.instance.PlayClipAt(menuClicSound, transform.position);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         gameIsPaused = true;
     }
 
     public void Resume() {
+        AudioManager.instance.PlayClipAt(menuClicSound, transform.position);
         settingsWindow.SetActive(false);
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
@@ -32,10 +35,12 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void SettingsButton() {
+        AudioManager.instance.PlayClipAt(menuClicSound, transform.position);
         settingsWindow.SetActive(true);
     }
 
     public void CloseSettingsWindow() {
+        AudioManager.instance.PlayClipAt(menuClicSound, transform.position);
         settingsWindow.SetActive(false);
     }
 }

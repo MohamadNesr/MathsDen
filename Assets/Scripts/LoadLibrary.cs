@@ -11,6 +11,7 @@ public class LoadLibrary : MonoBehaviour
     public GameObject profileButton;
     public GameObject playerProfile;
     private GameObject player;
+    public AudioClip teleportSound;
 
     private void Awake() {
         fadeSystem = GameObject.FindGameObjectWithTag("FadeSystem").GetComponent<Animator>();
@@ -22,6 +23,7 @@ public class LoadLibrary : MonoBehaviour
     }
 
     public IEnumerator teleportThere() {
+        AudioManager.instance.PlayClipAt(teleportSound, transform.position);
         fadeSystem.SetTrigger("FadeIn");
         yield return new WaitForSeconds(1f);
         gameButton.SetActive(true);

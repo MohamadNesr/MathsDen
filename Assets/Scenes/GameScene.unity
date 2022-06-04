@@ -4458,8 +4458,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 582976790}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: SetVolumeSound
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4681,6 +4681,7 @@ MonoBehaviour:
   gameButton: {fileID: 594999637}
   buttonNext: {fileID: 573074788}
   nbPages: 3
+  closeSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!114 &59059554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4738,6 +4739,7 @@ MonoBehaviour:
   buttonNext: {fileID: 573074788}
   nbPages: 3
   nbLesson: 1
+  turnPageSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!1 &96106142
 GameObject:
   m_ObjectHideFlags: 0
@@ -4883,6 +4885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 584790016}
   settingsWindow: {fileID: 582976788}
+  menuClicSound: {fileID: 8300000, guid: 40ac52a324fa82b46a5e99862dc70017, type: 3}
 --- !u!1 &122201994
 GameObject:
   m_ObjectHideFlags: 0
@@ -5169,6 +5172,7 @@ MonoBehaviour:
   libraryButton: {fileID: 173767688}
   profileButton: {fileID: 1379394653}
   playerProfile: {fileID: 1931446953}
+  teleportSound: {fileID: 8300000, guid: 15be2c9c4e5c29743b74bac628474cb6, type: 3}
 --- !u!114 &173767691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6076,6 +6080,7 @@ MonoBehaviour:
   readingLessonText: {fileID: 1178516572}
   lessonContent: {fileID: 1962233133}
   gameButton: {fileID: 594999637}
+  openLessonSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!1 &340363521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4201943057568343918, guid: 8915d675979e0414aa229dbd04f968a4, type: 3}
@@ -8918,6 +8923,7 @@ MonoBehaviour:
   libraryButton: {fileID: 173767688}
   profileButton: {fileID: 1379394653}
   playerProfile: {fileID: 1931446953}
+  teleportSound: {fileID: 8300000, guid: 15be2c9c4e5c29743b74bac628474cb6, type: 3}
 --- !u!1 &597610007
 GameObject:
   m_ObjectHideFlags: 0
@@ -9774,6 +9780,7 @@ MonoBehaviour:
   readingLessonText: {fileID: 502573779}
   lessonContent: {fileID: 59059551}
   gameButton: {fileID: 594999637}
+  openLessonSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!61 &627971423
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10078,6 +10085,7 @@ MonoBehaviour:
   readingLessonText: {fileID: 643038803}
   lessonContent: {fileID: 1992843560}
   gameButton: {fileID: 594999637}
+  openLessonSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!61 &773999875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11003,7 +11011,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 582976790}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetVolumeMusic
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13154,6 +13162,8 @@ MonoBehaviour:
   newPlayerSpawn: {fileID: 1536634311}
   tipsPanel: {fileID: 1677878421}
   tipsText: {fileID: 1298045736}
+  failureSound: {fileID: 8300000, guid: 012f75b02a89f114c94c5600c2b36797, type: 3}
+  victorySound: {fileID: 8300000, guid: 07ffadb9766c734409e9899d18dbd1c4, type: 3}
 --- !u!50 &1337828867
 Rigidbody2D:
   serializedVersion: 4
@@ -13296,6 +13306,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.019185066
       objectReference: {fileID: 0}
+    - target: {fileID: 4201943057568343915, guid: 8915d675979e0414aa229dbd04f968a4, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 15be2c9c4e5c29743b74bac628474cb6, type: 3}
     - target: {fileID: 4201943057568343915, guid: 8915d675979e0414aa229dbd04f968a4, type: 3}
       propertyPath: lessonNeeded
       value: 1
@@ -13707,6 +13721,7 @@ MonoBehaviour:
   libraryButton: {fileID: 173767688}
   profileButton: {fileID: 1379394653}
   playerProfile: {fileID: 1931446953}
+  teleportSound: {fileID: 8300000, guid: 15be2c9c4e5c29743b74bac628474cb6, type: 3}
 --- !u!1 &1384987134
 GameObject:
   m_ObjectHideFlags: 0
@@ -20440,6 +20455,7 @@ MonoBehaviour:
   gameButton: {fileID: 594999637}
   buttonNext: {fileID: 2125348036}
   nbPages: 2
+  closeSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!114 &1648999306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20496,6 +20512,7 @@ MonoBehaviour:
   buttonNext: {fileID: 2125348036}
   nbPages: 2
   nbLesson: 2
+  turnPageSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!1 &1677878421
 GameObject:
   m_ObjectHideFlags: 0
@@ -20768,6 +20785,7 @@ MonoBehaviour:
   pickUpMask2:
     serializedVersion: 2
     m_Bits: 0
+  pickUpSound: {fileID: 8300000, guid: 908cca02413d4b64b883e3209bee941c, type: 3}
 --- !u!114 &1700810921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21261,6 +21279,7 @@ MonoBehaviour:
   readingLessonText: {fileID: 1165179827}
   lessonContent: {fileID: 1648999303}
   gameButton: {fileID: 594999637}
+  openLessonSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!61 &1801545428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21777,6 +21796,7 @@ MonoBehaviour:
   buttonNext: {fileID: 0}
   nbPages: 2
   nbLesson: 0
+  turnPageSound: {fileID: 0}
 --- !u!114 &1931446956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21793,6 +21813,7 @@ MonoBehaviour:
   gameButton: {fileID: 594999637}
   buttonNext: {fileID: 0}
   nbPages: 2
+  closeSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!114 &1931446957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21929,6 +21950,7 @@ MonoBehaviour:
   gameButton: {fileID: 594999637}
   buttonNext: {fileID: 863510156}
   nbPages: 2
+  closeSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!114 &1962233138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21947,6 +21969,7 @@ MonoBehaviour:
   buttonNext: {fileID: 863510156}
   nbPages: 2
   nbLesson: 0
+  turnPageSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!1 &1988444595
 GameObject:
   m_ObjectHideFlags: 0
@@ -22216,6 +22239,7 @@ MonoBehaviour:
   gameButton: {fileID: 594999637}
   buttonNext: {fileID: 2018579041}
   nbPages: 1
+  closeSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!114 &1992843563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22271,6 +22295,7 @@ MonoBehaviour:
   buttonNext: {fileID: 2018579041}
   nbPages: 1
   nbLesson: 3
+  turnPageSound: {fileID: 8300000, guid: 2528446258b51184092202a4c1d8df70, type: 3}
 --- !u!1001 &2015996541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22339,6 +22364,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3703186070013746966}
     - target: {fileID: 2211024034569792926, guid: 093432c569fb4504ab47f5790d069a1b, type: 3}
+      propertyPath: failureSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 012f75b02a89f114c94c5600c2b36797, type: 3}
+    - target: {fileID: 2211024034569792926, guid: 093432c569fb4504ab47f5790d069a1b, type: 3}
       propertyPath: nextGameEasy
       value: 
       objectReference: {fileID: 1426538348}
@@ -22346,6 +22375,10 @@ PrefabInstance:
       propertyPath: nextGameHard
       value: 
       objectReference: {fileID: 632295263}
+    - target: {fileID: 2211024034569792926, guid: 093432c569fb4504ab47f5790d069a1b, type: 3}
+      propertyPath: victorySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 07ffadb9766c734409e9899d18dbd1c4, type: 3}
     - target: {fileID: 2211024034569792926, guid: 093432c569fb4504ab47f5790d069a1b, type: 3}
       propertyPath: failureMessage
       value: 
@@ -23261,6 +23294,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4201943057568343915, guid: 8915d675979e0414aa229dbd04f968a4, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 15be2c9c4e5c29743b74bac628474cb6, type: 3}
+    - target: {fileID: 4201943057568343915, guid: 8915d675979e0414aa229dbd04f968a4, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4201943057568343915, guid: 8915d675979e0414aa229dbd04f968a4, type: 3}
       propertyPath: doorOpenPopUp
       value: 
       objectReference: {fileID: 29605853}
@@ -23385,6 +23426,14 @@ PrefabInstance:
       propertyPath: playerSpawn
       value: 
       objectReference: {fileID: 3703186070013746966}
+    - target: {fileID: 9111498364534798013, guid: 613a0b4204abe524fa927503e2df91aa, type: 3}
+      propertyPath: failureSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 012f75b02a89f114c94c5600c2b36797, type: 3}
+    - target: {fileID: 9111498364534798013, guid: 613a0b4204abe524fa927503e2df91aa, type: 3}
+      propertyPath: victorySound
+      value: 
+      objectReference: {fileID: 8300000, guid: 07ffadb9766c734409e9899d18dbd1c4, type: 3}
     - target: {fileID: 9111498364534798013, guid: 613a0b4204abe524fa927503e2df91aa, type: 3}
       propertyPath: toDesactivate
       value: 

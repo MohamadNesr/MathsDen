@@ -5,7 +5,11 @@ public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    public void SetVolume(float volume) {
-        audioMixer.SetFloat("volume", volume);
+    public void SetVolumeMusic(float volume) {
+        audioMixer.SetFloat("music", volume);
+    }
+
+    public void SetVolumeSound(float volume) {
+        audioMixer.SetFloat("sound", volume);
     }
 }

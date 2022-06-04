@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     public GameObject goReadLessonPopUp;
     public int lessonNeeded;
     private bool isInRange;
+    public AudioClip sound;
 
     void Awake()
     {
@@ -39,6 +40,7 @@ public class Door : MonoBehaviour
     public IEnumerator tryOpenDoor() {
         doorOpenPopUp.SetActive(false);
         if (playerProfile.hasReadLesson[lessonNeeded]) {
+            AudioManager.instance.PlayClipAt(sound, transform.position);
             Destroy(doorToDestroy);
         } else {
             goReadLessonPopUp.SetActive(true);

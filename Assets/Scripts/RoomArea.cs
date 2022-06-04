@@ -37,6 +37,10 @@ public class RoomArea : MonoBehaviour
     private bool firstTipDisplayed;
     private bool secondTipDisplayed;
 
+    // Sounds
+    public AudioClip failureSound;
+    public AudioClip victorySound;
+
     Random rnd = new Random();
 
     private void Awake() {
@@ -142,6 +146,7 @@ public class RoomArea : MonoBehaviour
                 // Increment nb essay for this exercice
                 playerProfile.nbTotalEssay[1] = playerProfile.nbTotalEssay[1] + 1f;
                 if(victory == true){
+                    AudioManager.instance.PlayClipAt(victorySound, transform.position);
                     playerProfile.nbExercicesDone = playerProfile.nbExercicesDone + 1;
                     animator.SetBool("Area",victory);
                     Debug.Log("Partie 3 gagnee!");
@@ -158,6 +163,7 @@ public class RoomArea : MonoBehaviour
                     StartCoroutine( CoroutineVictory() );
 
                 }  else{
+                    AudioManager.instance.PlayClipAt(failureSound, transform.position);
                     // Increment nb errors for this exercice
                     playerProfile.nbErrors[1] = playerProfile.nbErrors[1] + 1f;
                     animator.SetBool("Area",victory);

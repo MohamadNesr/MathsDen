@@ -9,6 +9,7 @@ public class HandlePage : MonoBehaviour
     private int currentPageIndex;
     private int nextPageIndex;
     public int nbLesson;
+    public AudioClip turnPageSound;
 
     void Awake() {
         playerProfile = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerProfile>();
@@ -25,6 +26,7 @@ public class HandlePage : MonoBehaviour
     }
 
     public void displayNextPage() {
+        AudioManager.instance.PlayClipAt(turnPageSound, transform.position);
         pages[currentPageIndex].SetActive(false);
         pages[nextPageIndex].SetActive(true);
         currentPageIndex++;
