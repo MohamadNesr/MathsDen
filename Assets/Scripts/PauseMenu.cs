@@ -43,4 +43,9 @@ public class PauseMenu : MonoBehaviour
         AudioManager.instance.PlayClipAt(menuClicSound, transform.position);
         settingsWindow.SetActive(false);
     }
+
+    public void QuitGame() {
+        AudioManager.instance.PlayClipAt(menuClicSound, transform.position);
+        Application.Quit();
+    }
 }
